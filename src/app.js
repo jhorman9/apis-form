@@ -1,6 +1,5 @@
 const cors = require("cors");
 const express = require("express");
-const db = require("./utils/database");
 const transporter = require("./utils/mailer");
 require("dotenv").config();
 
@@ -9,10 +8,6 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
-
-db.authenticate()
-  .then(() => console.log("Autenticación exitosa"))
-  .catch((error) => console.log(error));
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Bienvenido al servidor" });
