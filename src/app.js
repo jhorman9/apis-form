@@ -15,7 +15,7 @@ db.authenticate()
   .catch((error) => console.log(error));
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Bienvenido al servidor", APIS: "/form" });
+  res.status(200).json({ message: "Bienvenido al servidor, /form"});
 });
 
 let numberSend = 0;
